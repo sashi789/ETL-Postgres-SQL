@@ -4,9 +4,9 @@ services:
   postgres:
     image: postgres:15
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: staging_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
     volumes:
@@ -21,7 +21,7 @@ services:
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "MssqlP@ssword1"
+      SA_PASSWORD: ${MSSQL_PASSWORD}
       MSSQL_PID: "Express"
     ports:
       - "1433:1433"
@@ -31,25 +31,21 @@ services:
   etl-app:
     build: .
     depends_on:
-      postgres:
-        condition: service_healthy
-      mssql:
-        condition: service_started
+      - postgres
+      - mssql
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: staging_db
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
-
-      MSSQL_USER: sa
-      MSSQL_PASSWORD: MssqlP@ssword1
-      MSSQL_DB: master
-      MSSQL_HOST: mssql
-      MSSQL_PORT: 1433
-
-      API_USERS_URL: https://jsonplaceholder.typicode.com/users
-      API_POSTS_URL: https://jsonplaceholder.typicode.com/posts
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      MSSQL_USER: ${MSSQL_USER}
+      MSSQL_PASSWORD: ${MSSQL_PASSWORD}
+      MSSQL_DB: ${MSSQL_DB}
+      MSSQL_HOST: ${MSSQL_HOST}
+      MSSQL_PORT: ${MSSQL_PORT}
+      API_USERS_URL: ${API_USERS_URL}
+      API_POSTS_URL: ${API_POSTS_URL}
 
 volumes:
   pg_data:

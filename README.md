@@ -33,6 +33,31 @@ assessment/
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/)
 
+## Environment Variables (.env file)
+Create a `.env` file in the project root with the following content (example values shown):
+
+```
+# PostgreSQL Configuration
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=staging_db
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+
+# SQL Server Configuration
+MSSQL_USER=sa
+MSSQL_PASSWORD=MssqlP@ssword1
+MSSQL_DB=master
+MSSQL_HOST=mssql
+MSSQL_PORT=1433
+
+# API Configuration
+API_USERS_URL=https://jsonplaceholder.typicode.com/users
+API_POSTS_URL=https://jsonplaceholder.typicode.com/posts
+```
+
+**Note:** The `.env` file is included in `.gitignore` and should NOT be committed to version control.
+
 ## Setup & Usage
 
 1. **Clone the repository:**
@@ -91,7 +116,7 @@ You can use tools like DBeaver, Azure Data Studio, or psql/sqlcmd to connect and
 - **docker-compose.yml:** Orchestrates all services.
 
 ## Customization
-- To change the API endpoints or database credentials, edit the environment variables in `docker-compose.yml`.
+- To change the API endpoints or database credentials, edit the environment variables in `docker-compose.yml` or your `.env` file.
 - To modify the transformation logic, edit `app/transform.py`.
 
 ## Testing
