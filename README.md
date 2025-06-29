@@ -39,14 +39,14 @@ Create a `.env` file in the project root with the following content (example val
 ```
 # PostgreSQL Configuration
 POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
+POSTGRES_PASSWORD=Your_password
 POSTGRES_DB=staging_db
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
 
 # SQL Server Configuration
 MSSQL_USER=sa
-MSSQL_PASSWORD=MssqlP@ssword1
+MSSQL_PASSWORD=Your_password
 MSSQL_DB=master
 MSSQL_HOST=mssql
 MSSQL_PORT=1433
