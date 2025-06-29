@@ -102,7 +102,7 @@ API_POSTS_URL=https://jsonplaceholder.typicode.com/posts
 - **Username:** `sa`
 - **Password:** `MssqlP@ssword1`
 
-You can use tools like DBeaver, Azure Data Studio, or psql/sqlcmd to connect and inspect the data.
+You can use tools like DBeaver, Azure Data Studio, or psql/sqlcmd to connect and inspect the data. I've used DBeaver.
 
 ## Code Overview
 
