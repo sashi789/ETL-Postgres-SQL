@@ -38,14 +38,14 @@ Create a `.env` file in the project root with the following content (example val
 
 ```
 # PostgreSQL Configuration
-POSTGRES_USER=postgres
+POSTGRES_USER=Your_username
 POSTGRES_PASSWORD=Your_password
 POSTGRES_DB=staging_db
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
 
 # SQL Server Configuration
-MSSQL_USER=sa
+MSSQL_USER=Your_username
 MSSQL_PASSWORD=Your_password
 MSSQL_DB=master
 MSSQL_HOST=mssql
@@ -92,15 +92,15 @@ API_POSTS_URL=https://jsonplaceholder.typicode.com/posts
 - **Host:** `localhost`
 - **Port:** `5432`
 - **Database:** `staging_db`
-- **Username:** `postgres`
-- **Password:** `postgres`
+- **Username:** `Your_username`
+- **Password:** `Your_password`
 
 ### SQL Server (Fact Table)
 - **Host:** `localhost`
 - **Port:** `1433`
 - **Database:** `master`
-- **Username:** `sa`
-- **Password:** `MssqlP@ssword1`
+- **Username:** `Your_username`
+- **Password:** `Your_password`
 
 You can use tools like DBeaver, Azure Data Studio, or psql/sqlcmd to connect and inspect the data. I've used DBeaver.
 
